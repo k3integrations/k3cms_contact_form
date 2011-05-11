@@ -1,0 +1,173 @@
+/*================================================================================================*/
+/* Common */
+
+/*================================================================================================*/
+/* contact form */
+
+.new_k3cms_contact_form_contact .field {
+  margin-bottom: 10px;
+}
+.new_k3cms_contact_form_contact .field + .field {
+  margin-top: 10px;
+}
+.new_k3cms_contact_form_contact .field label {
+  display: block;
+}
+
+.new_k3cms_contact_form_contact .disregard {
+  display: none;
+}
+
+/*================================================================================================*/
+/* .context_ribbon */
+
+.context_ribbon,
+.context_ribbon {
+  background-color: #eee;
+  border: 1px solid #fff;
+  padding: 5px;
+  display: none;
+  z-index: 9999; /* must be on top of "expose" mask */
+}
+
+
+.context_ribbon .left {
+  float: left;
+}
+
+.context_ribbon .left + .left {
+  margin-left: 10px;
+}
+
+.context_ribbon input {
+  margin: 0;
+}
+.context_ribbon input + input {
+  margin-left: 10px;
+}
+
+.context_ribbon label {
+  font-weight: bold;
+}
+
+.context_ribbon .field {
+  whitespace: nowrap;
+}
+
+/*================================================================================================*/
+/* ContactForms */
+
+/*------------------------------------------------------------------------------------------------*/
+/* .k3cms_contact_form.contact_form_list */
+.k3cms_contact_form.contact_form_list .header {
+  margin-bottom: 20px;
+}
+
+/*------------------------------------------------------------------------------------------------*/
+/* .k3cms_contact_form_contact_form.show */
+
+.k3cms_contact_form_contact_form.show {
+  position: relative;
+  float: left;
+  clear: left;
+  padding: 10px 18px 0;
+  background-color: white;
+  /* This is just an invisible placeholder border to keep dimensions uniform. The width here should match that of .k3cms_contact_form_contact_form.new_record */
+  border: 5px solid transparent;
+  width: 550px;
+}
+
+.k3cms_contact_form_contact_form.show.new_record {
+  display: none;
+  border: 5px solid green;
+}
+
+.k3cms_contact_form_contact_form.show .video_player {
+  margin: 0 0 5px -20px;
+  width: 352px;
+  height: 265px;
+  padding: 18px 0px 10px 20px;
+  background: url(/images/k3cms/contact_form/video_player_large_bg.png) top left no-repeat;
+}
+
+.k3cms_contact_form_contact_form.show>.left {
+  float: left;
+  width: 200px;
+}
+
+.k3cms_contact_form_contact_form.show>.right {
+  float: right;
+  width: 390px;
+  padding-left: 10px;
+}
+
+.k3cms_contact_form_contact_form.show {
+     -moz-box-shadow: 0 0 12px #ddd;
+  -webkit-box-shadow: 0 0 12px #ddd;
+          box-shadow: 0 0 12px #ddd;
+}
+
+/* Records that you hover over or are actively editing */ 
+/* Copied fom inline_editor/public/stylesheets/k3cms/inline_editor.css -- keep in sync */
+.edit_mode_on .k3cms_contact_form_contact_form.show:hover,
+.edit_mode_on .k3cms_contact_form_contact_form.show.active,
+.context_ribbon,
+.context_ribbon {
+  outline-color: #009000; /* green */
+     -moz-box-shadow: 0 0 12px #009000;
+  -webkit-box-shadow: 0 0 12px #009000;
+          box-shadow: 0 0 12px #009000;
+}
+
+.k3cms_contact_form_contact_form.show .editor_links {
+  clear: both;
+}
+
+.k3cms_contact_form_contact_form form {
+  display: inline;
+}
+.k3cms_contact_form_contact_form form input {
+  margin: 0;
+}
+
+.k3cms_contact_form_contact_form.show .k3cms_contact_form_contact_form div.tags input {
+  width: 100px;
+}
+
+.k3cms_contact_form_contact_form.show.existing_record +
+.k3cms_contact_form_contact_form.show.existing_record {
+  margin-top: 20px;
+}
+
+
+/*================================================================================================*/
+/* Icons */
+.k3cms_contact_form li.icon.button a {
+  background: url(/images/k3cms/contact_form/icons.png) no-repeat;
+}
+
+.k3cms_contact_form li.icon.button.b1 a                 { background-position: 0 -24px;}
+.k3cms_contact_form li.icon.button.b2 a                 { background-position: 0 -48px;}
+.k3cms_contact_form li.icon.button.b3 a                 { background-position: 0 -72px;}
+.k3cms_contact_form li.icon.button.b4 a                 { background-position: 0 -96px;}
+.k3cms_contact_form li.icon.button.b5 a                 { background-position: 0 -121px;}
+.k3cms_contact_form li.icon.button.b6 a                 { background-position: 0 -144px;}
+.k3cms_contact_form li.icon.button.b7 a                 { background-position: 0 -168px;}
+.k3cms_contact_form li.icon.button.b8 a                 { background-position: 0 -192px;}
+.k3cms_contact_form li.icon.button.b9 a                 { background-position: 0 -384px;}
+.k3cms_contact_form li.icon.button.b10 a                { background-position: 0 -408px;}
+.k3cms_contact_form li.icon.button.b11 a                { background-position: 0 -430px;}
+.k3cms_contact_form li.icon.button.b12 a                { background-position: 0 -454px;}
+.k3cms_contact_form li.icon.button.b13 a                { background-position: 0 -502px;}
+.k3cms_contact_form li.icon.button.b14 a                { background-position: 0 -526px;}
+.k3cms_contact_form li.icon.button.b15 a                { background-position: 0 -552px;}
+.k3cms_contact_form li.icon.button.b16 a                { background-position: 0 -574px;}
+.k3cms_contact_form li.icon.button.b17 a                { background-position: 0 -598px;}
+.k3cms_contact_form li.icon.button.b18 a                { background-position: 0 -624px;}
+.k3cms_contact_form li.icon.button.b19 a                { background-position: 0 -648px;}
+.k3cms_contact_form li.icon.button.b20 a                { background-position: 0 -672px;}
+.k3cms_contact_form li.icon.button.b21 a                { background-position: 0 -696px;}
+.k3cms_contact_form li.icon.button.b22 a                { background-position: 0 -720px;}
+.k3cms_contact_form li.icon.button.b23 a                { background-position: 0 -744px;}
+
+/*================================================================================================*/

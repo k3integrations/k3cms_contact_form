@@ -1,0 +1,31 @@
+- if can?(:edit, @contact_form) && edit_mode?
+  .context_ribbon{:class => dom_id(@contact_form)}
+    .field
+      %label Recipient e-mail address:
+      - if @contact_form.new_record?
+        = text_field :contact_form, :recipient_email
+      - else
+        = best_in_place @contact_form, :recipient_email, :type => :input
+
+    .field
+      %label Show subject field?
+      - if @contact_form.new_record?
+        = check_box :contact_form, :show_subject_field
+      - else
+        = best_in_place @contact_form, :show_subject_field, :type => :checkbox
+
+    %div
+      - unless @contact_form.new_record?
+        = link_to image_tag('k3cms/contact_form/page_white_link.png', :alt => 'View page') + "View page", k3cms_contact_form_contact_form_path(@contact_form)
+
+        - if can?(:destroy, @contact_form)
+          = link_to image_tag('k3cms/contact_form/delete.png', :alt => 'Delete')  + ' Delete', polymorphic_url(@contact_form, :only_path => true), :confirm => 'Are you sure?', :method => :delete, :remote => true
+
+    %div
+      .left
+        - if can?(:edit, @contact_form) && edit_mode? && @contact_form.new_record?
+          = button_to_function 'Create', '', :class => 'create_button'
+
+      .left
+        - if can?(:edit, @contact_form) && edit_mode? && @contact_form.new_record?
+          = link_to_function image_tag('k3cms/contact_form/cancel.png', :alt => 'Cancel') + ' Cancel', "$(this).closest('.k3cms_contact_form_contact_form').trigger('close')"

@@ -1,0 +1,5 @@
+- content_for :title do
+  = strip_tags @contact_form.title
+
+-# Hard-code the widget on this page
+= render_cell 'k3cms/contact_form/contact_forms', :show, :contact_form => @contact_form, :contact => @contact

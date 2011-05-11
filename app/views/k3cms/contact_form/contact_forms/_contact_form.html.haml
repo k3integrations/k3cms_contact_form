@@ -1,0 +1,3 @@
+-# This file exists so that we can use the nice Rails shorthand, render(@contact_form)
+-# FIXME: Weird, when you do render(@contact_form), it looks for a partial named k3cms/contact_form/k3cms/contact_form/contact_forms/contact_form, so of course it doesn't find this partial. Too bad.
+= render_cell 'k3cms/contact_form/contact_forms', :show, :contact_form => @contact_form

@@ -1,0 +1,32 @@
+-# FIXME: remove duplication with s3_podcast
+- new_contact_form_js = capture do
+  :plain
+    $('.k3cms_contact_form_contact_form_list .the_list>.k3cms_contact_form_contact_form#new_k3cms_contact_form_contact_form').trigger('toggle');
+    console.debug("$('.k3cms_contact_form_contact_form_list .the_list>.k3cms_contact_form_contact_form#new_k3cms_contact_form_contact_form')=", $('.k3cms_contact_form_contact_form_list .the_list>.k3cms_contact_form_contact_form#new_k3cms_contact_form_contact_form'));
+    $('.k3cms_contact_form_contact_form_list .the_list>.k3cms_contact_form_contact_form#new_k3cms_contact_form_contact_form').data('tooltip').show()
+    $('.k3cms_contact_form_contact_form_list .the_list>.k3cms_contact_form_contact_form:visible:eq(0)').
+      expose({
+        color:'#000', 
+        opacity: 0.6, 
+        onClose: function() {
+          var e = this.getExposed()
+          if (!e.data('closing') && $('.k3cms_contact_form_contact_form#new_k3cms_contact_form_contact_form').data('close_box_when_mask_closes') !== false) {
+            e.data('closing', 'expose is closed');
+            e.trigger('close');
+          }
+        },
+      });
+
+.k3cms_contact_form_contact_form_list
+  .header
+    %div
+    - if can?(:create, K3cms::ContactForm::ContactForm) && edit_mode?
+      %div
+        = link_to_function image_tag('k3cms/contact_form/add.png', :alt => 'New') + ' New contact form', new_contact_form_js
+
+  .the_list
+    - if can?(:create, K3cms::ContactForm::ContactForm) && edit_mode?
+      = render_cell 'k3cms/contact_form/contact_forms', :show, :contact_form => @new_contact_form
+
+    - @contact_forms.each do |contact_form|
+      = render_cell 'k3cms/contact_form/contact_forms', :show, :contact_form => contact_form

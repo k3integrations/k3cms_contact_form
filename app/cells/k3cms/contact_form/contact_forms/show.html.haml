@@ -1,0 +1,34 @@
+%noscript
+  %p.error Sorry, but JavaScript appears to be disabled, so the following form will not work.  Please enable JavaScript and reload this page.
+
+%div{:class => k3cms_contact_form_contact_form_classes(@contact_form) + ['show'], :id => dom_id(@contact_form)}
+  = render_cell('k3cms/contact_form/contact_forms', :context_ribbon, :contact_form => @contact_form)
+
+  %h3.title
+    - if can?(:edit, @contact_form) && edit_mode?
+      = inline_editable('span', @contact_form, :title) do
+        = raw @contact_form.title
+    - else
+      = raw(@contact_form.title)
+
+  .header
+    - if can?(:edit, @contact_form) && edit_mode?
+      = inline_editable('div', @contact_form, :header) do
+        = raw @contact_form.header
+    - else
+      = raw @contact_form.header
+
+  - if @contact.errors.any?
+    #errorExplanation
+      %h2
+        = pluralize(@contact.errors.count, "error")
+        prevented this message from being sent:
+      %ul
+        - @contact.errors.full_messages.each do |msg|
+          %li= msg
+
+  - unless @contact_form.new_record?
+    = render :view => '_form.html.haml'
+
+  = render_cell 'k3cms/ribbon', :context_ribbon_js, @contact_form,
+    :ribbon_offset => [-5, -5]
