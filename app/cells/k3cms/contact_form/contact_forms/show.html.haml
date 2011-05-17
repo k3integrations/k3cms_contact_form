@@ -1,5 +1,6 @@
 %noscript
-  %p.error Sorry, but JavaScript appears to be disabled, so the following form will not work.  Please enable JavaScript and reload this page.
+  %p.error
+    =t("Sorry, JavaScript is disabled")
 
 %div{:class => k3cms_contact_form_contact_form_classes(@contact_form) + ['show'], :id => dom_id(@contact_form)}
   = render_cell('k3cms/contact_form/contact_forms', :context_ribbon, :contact_form => @contact_form)

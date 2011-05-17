@@ -1,20 +1,20 @@
 = form_for [@contact_form, @contact] do |f|
 
   .field
-    = f.label      :name, "Your name:"
+    = f.label      :name, t('Your name') + ':'
     = f.text_field :name
 
   .field
-    = f.label      :email, "Your e-mail address:"
+    = f.label      :email, t('Your e-mail address') + ':'
     = f.text_field :email
 
   - if @contact_form.show_subject_field?
     .field
-      = f.label      :subject, "Subject:"
+      = f.label      :subject, t('Subject') + ':'
       = f.text_field :subject
 
   .field
-    = f.label     :message, 'Message:'
+    = f.label     :message, t('Message') + ':'
     = f.text_area :message
 
   .field.disregard
@@ -25,4 +25,4 @@
     = f.label      :fill_in_via_javascript, 'For non-humans:'
     = f.text_field :fill_in_via_javascript, :class => 'fill_in_via_javascript'
 
-  = f.submit 'Send Message'
+  = f.submit t('Send Message')

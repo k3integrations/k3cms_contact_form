@@ -1,9 +1,7 @@
 en:
-  Watch: Watch
-  Listen: Listen
-  Download: Download
-  Download extension file: Download %{extension} file
-  Subscribe to Podcast: Subscribe to Podcast
-  Latest Programs: Latest Programs
-  View more programs: View more programs
-  Tags: Tags
+  Sorry, JavaScript is disabled: Sorry, but JavaScript appears to be disabled, so the following form will not work.  Please enable JavaScript and reload this page.
+  Your name: Your name
+  Your e-mail address: Your e-mail address
+  Subject: Subject
+  Message: Message
+  Send Message: Send Message

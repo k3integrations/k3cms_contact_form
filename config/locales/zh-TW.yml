@@ -1,9 +1,7 @@
 zh-TW:
-  Watch: 看
-  Listen: 聽
-  Download: 下載
-  Download type file: 下載 %{extension} 文件
-  Subscribe to Podcast: 訂閱播客
-  Latest Programs: 最新方案
-  View more programs: 查看更多的節目
-  Tags: Tags
+  Sorry, JavaScript is disabled: Sorry, but JavaScript appears to be disabled, so the following form will not work.  Please enable JavaScript and reload this page.
+  Your name: Your name
+  Your e-mail address: Your e-mail address
+  Subject: Subject
+  Message: Message
+  Send Message: Send Message
