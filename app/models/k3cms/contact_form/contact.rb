@@ -8,14 +8,18 @@ module K3cms
       attribute :subject
       attribute :message,   :validate => true
 
-      append :remote_ip, :user_agent, :session
+      append :url, :remote_ip, :user_agent, :session
       
       def headers
         {
-          :subject => subject.present? ? subject : "Message from website",
+          :subject => subject_prefix + (subject.present? ? subject : "Message from website"),
           :to      => recipient_email,
           :from    => %("#{name}" <#{email}>)
         }
+      end
+
+      def subject_prefix
+        "[#{request.domain}] "
       end
 
       #---------------------------------------------------------------------------------------------
