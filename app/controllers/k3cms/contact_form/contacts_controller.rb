@@ -18,7 +18,7 @@ module K3cms
 
       def create
         @contact = Contact.new(params[:k3cms_contact_form_contact])
-        @contact.recipient_email = @contact_form.recipient_email
+        @contact.contact_form = @contact_form
         @contact.request = request
 
         if @contact.deliver
