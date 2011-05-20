@@ -18,6 +18,16 @@
   display: none;
 }
 
+.k3cms_contact_form_contact_form a.with_icon {
+  position: relative;
+  margin-left: 20px;
+}
+.k3cms_contact_form_contact_form a.with_icon img {
+  position: absolute;
+  top: 0px;
+  left: -20px;
+}
+
 /*================================================================================================*/
 /* .context_ribbon */
 

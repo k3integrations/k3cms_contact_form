@@ -16,10 +16,10 @@
 
     %div
       - unless @contact_form.new_record?
-        = link_to image_tag('k3cms/contact_form/page_white_link.png', :alt => 'View page') + "View page", k3cms_contact_form_contact_form_path(@contact_form)
+        = link_to image_tag('k3cms/contact_form/page_white_link.png', :alt => 'View page') + "View page", k3cms_contact_form_contact_form_path(@contact_form), :class => 'view_page with_icon'
 
         - if can?(:destroy, @contact_form)
-          = link_to image_tag('k3cms/contact_form/delete.png', :alt => 'Delete')  + ' Delete', polymorphic_url(@contact_form, :only_path => true), :confirm => 'Are you sure?', :method => :delete, :remote => true
+          = link_to image_tag('k3cms/contact_form/delete.png', :alt => 'Delete')  + ' Delete', polymorphic_url(@contact_form, :only_path => true), :confirm => 'Are you sure?', :method => :delete, :remote => true, :class => 'view_page with_icon'
 
     %div
       .left
@@ -28,4 +28,4 @@
 
       .left
         - if can?(:edit, @contact_form) && edit_mode? && @contact_form.new_record?
-          = link_to_function image_tag('k3cms/contact_form/cancel.png', :alt => 'Cancel') + ' Cancel', "$(this).closest('.k3cms_contact_form_contact_form').trigger('close')"
+          = link_to_function image_tag('k3cms/contact_form/cancel.png', :alt => 'Cancel') + ' Cancel', "$(this).closest('.k3cms_contact_form_contact_form').trigger('close')", :class => 'cancel with_icon'
