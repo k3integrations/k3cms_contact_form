@@ -111,7 +111,7 @@
   padding-left: 10px;
 }
 
-.k3cms_contact_form_contact_form.show {
+.edit_mode_on .k3cms_contact_form_contact_form.show {
      -moz-box-shadow: 0 0 12px #ddd;
   -webkit-box-shadow: 0 0 12px #ddd;
           box-shadow: 0 0 12px #ddd;
