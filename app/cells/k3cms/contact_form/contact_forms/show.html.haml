@@ -5,7 +5,7 @@
 %div{:class => k3cms_contact_form_contact_form_classes(@contact_form) + ['show'], :id => dom_id(@contact_form)}
   = render_cell('k3cms/contact_form/contact_forms', :context_ribbon, :contact_form => @contact_form)
 
-  %h3.title
+  %h2.title
     - if can?(:edit, @contact_form) && edit_mode?
       = inline_editable('span', @contact_form, :title) do
         = raw @contact_form.title
