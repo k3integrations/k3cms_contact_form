@@ -1,6 +1,7 @@
 module K3cms
   module ContactForm
     class ContactForm < ActiveRecord::Base
+      self.include_root_in_json = false
       set_table_name 'k3cms_contact_forms'
 
       belongs_to :page

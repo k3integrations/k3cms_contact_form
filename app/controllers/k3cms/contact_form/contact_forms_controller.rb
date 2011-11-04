@@ -21,11 +21,7 @@ module K3cms
           else
             format.html # show.html.erb
           end
-          format.js # not currently used
-          format.json {
-            K3cms::ContactForm::ContactForm.model_name.instance_variable_set('@element', dom_class(@contact_form))
-            render :json => @contact_form
-          }
+          format.json { render :json => @contact_form }
         end
       end
 

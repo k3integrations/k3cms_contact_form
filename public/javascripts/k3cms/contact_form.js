@@ -1,7 +1,7 @@
 K3cms_ContactForm = {
 }
 
-k3cms_contact_form_contact_form = {
+K3cms_ContactForm_ContactForm = {
   url_for: function(object) {
      return '/contact_forms/' + object.id;
   },
